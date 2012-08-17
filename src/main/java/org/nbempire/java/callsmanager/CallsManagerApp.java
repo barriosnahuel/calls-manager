@@ -7,7 +7,7 @@ import org.nbempire.java.callsmanager.windows.NewCallWindow;
 /**
  * User: Nahuel Barrios. Date: Mar 5, 2010. Time: 11:00:40 AM.
  */
-public class CallManagerApp {
+public class CallsManagerApp {
 
     /**
      * @param args
