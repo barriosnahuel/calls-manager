@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Maven: org.nbempire.java:bocswt:0.1">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/nbempire/java/bocswt/0.1/bocswt-0.1.jar!/" />
+      <root url="file://$PROJECT_DIR$/../BOCSWT" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/nbempire/java/bocswt/0.1/bocswt-0.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../BOCSWT/src/main/java" />
+    </SOURCES>
+  </library>
+</component>

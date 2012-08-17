@@ -1,1 +1,2 @@
-This file was created by IntelliJ IDEA 11.1.3 for binding GitHub repository
+CallsManager is a Java dektop application made using SWT framework to create the graphic user interface.
+The application was created to help users that usualy have calls at work to take notes and then export it to a text file.
