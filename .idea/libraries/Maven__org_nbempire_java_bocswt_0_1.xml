@@ -9,6 +9,7 @@
     </JAVADOC>
     <SOURCES>
       <root url="file://$PROJECT_DIR$/../BOCSWT/src/main/java" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/nbempire/java/bocswt/0.1/bocswt-0.1-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
