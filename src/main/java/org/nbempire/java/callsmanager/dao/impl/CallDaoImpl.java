@@ -5,11 +5,13 @@ import java.util.Calendar;
 import org.nbempire.java.boc6.model.io.file.javase.impl.FileHandlerImpl;
 import org.nbempire.java.callsmanager.dao.CallDao;
 import org.nbempire.java.callsmanager.domain.Call;
+import org.springframework.stereotype.Repository;
 
 /**
  * @author Barrios, Nahuel.
  * @version 1.0
  */
+@Repository
 public class CallDaoImpl implements CallDao {
 
     //@Override

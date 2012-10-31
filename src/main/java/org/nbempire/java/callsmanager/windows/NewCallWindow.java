@@ -16,8 +16,11 @@ import org.nbempire.java.callsmanager.MainKeys;
 import org.nbempire.java.callsmanager.domain.Call;
 import org.nbempire.java.callsmanager.domain.Contact;
 import org.nbempire.java.callsmanager.domain.Task;
+import org.nbempire.java.callsmanager.service.CallService;
 import org.nbempire.java.callsmanager.service.impl.CallServiceImpl;
 import org.nbempire.java.callsmanager.util.CallManagerUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 
 /**
  * @author Barrios, Nahuel.
@@ -25,6 +28,8 @@ import org.nbempire.java.callsmanager.util.CallManagerUtil;
  * @since Mar 19, 2010, 10:35:55 AM
  */
 public class NewCallWindow extends BaseWindow {
+
+    private CallService callService;
 
     private Call newCall;
 
@@ -45,9 +50,10 @@ public class NewCallWindow extends BaseWindow {
     private Text longDescript;
     private Button btn_addTask;
 
-    public NewCallWindow(Display display) {
+    public NewCallWindow(Display display, CallService callService) {
         super(display, SWT.APPLICATION_MODAL | SWT.SHELL_TRIM);
         newCall = new Call();
+        this.callService = callService;
     }
 
     @Override
@@ -158,7 +164,7 @@ public class NewCallWindow extends BaseWindow {
 
         newCall.setContact(new Contact(callWith.getText()));
 
-        CallServiceImpl.getInstance().exportToFile(newCall);
+        callService.exportToFile(newCall);
     }
 
     /**
