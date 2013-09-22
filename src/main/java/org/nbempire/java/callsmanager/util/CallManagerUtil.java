@@ -1,11 +1,11 @@
 package org.nbempire.java.callsmanager.util;
 
+import org.eclipse.swt.widgets.Combo;
+import org.eclipse.swt.widgets.Widget;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
-import org.eclipse.swt.widgets.Combo;
-import org.eclipse.swt.widgets.Widget;
 
 /**
  * @author Barrios, Nahuel.
@@ -15,8 +15,8 @@ import org.eclipse.swt.widgets.Widget;
 public class CallManagerUtil {
 
     /**
-     * Adds each value of the list parameter to the combo parameter. Please note that the method will throw a NullPointerException when
-     * either the combo or the list are null.
+     * Adds each value of the list parameter to the combo parameter. Please note that the method will throw a NullPointerException when either the
+     * combo or the list are null.
      *
      * @param combo
      *         An instantiated Combo.
@@ -71,5 +71,4 @@ public class CallManagerUtil {
     public static String getFormatedDate(Date date) {
         return date.getYear() + "-" + date.getMonth() + "-" + date.getDay() + " - At " + date.getHours() + ":" + date.getMinutes();
     }
-
 }

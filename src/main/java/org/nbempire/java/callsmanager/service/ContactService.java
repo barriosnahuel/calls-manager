@@ -9,5 +9,4 @@ package org.nbempire.java.callsmanager.service;
  */
 public interface ContactService {
 
-    // TODO : Functionality : Put here method's signatures from the implementation.
 }

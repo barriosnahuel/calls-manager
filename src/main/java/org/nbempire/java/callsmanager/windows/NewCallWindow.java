@@ -16,11 +16,8 @@ import org.nbempire.java.callsmanager.MainKeys;
 import org.nbempire.java.callsmanager.domain.Call;
 import org.nbempire.java.callsmanager.domain.Contact;
 import org.nbempire.java.callsmanager.domain.Task;
-import org.nbempire.java.callsmanager.service.CallService;
 import org.nbempire.java.callsmanager.service.impl.CallServiceImpl;
 import org.nbempire.java.callsmanager.util.CallManagerUtil;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 
 /**
  * @author Barrios, Nahuel.
@@ -29,31 +26,39 @@ import org.springframework.context.annotation.Bean;
  */
 public class NewCallWindow extends BaseWindow {
 
-    private CallService callService;
-
     private Call newCall;
 
     private static final int COL_TASK_NUMBER_WIDTH = 40;
+
     private static final int COL_SHORT_DESCRIPT_WIDTH = 320;
+
     private static final int SHORT_DESCRIPT_WIDTH = 500;
+
     private static final int LONG_DESCRIPT_WIDTH = 700;
+
     private static final int NORMAL_TEXT_HEIGHT = 20;
 
     private Composite cpst_leftColumn;
+
     private Text newPath;
+
     private Text callWith;
+
     private Text subject;
+
     private Table tbl_tasks;
 
     private Composite cpst_rightColumn;
+
     private Text shortDescript;
+
     private Text longDescript;
+
     private Button btn_addTask;
 
-    public NewCallWindow(Display display, CallService callService) {
+    public NewCallWindow(Display display) {
         super(display, SWT.APPLICATION_MODAL | SWT.SHELL_TRIM);
         newCall = new Call();
-        this.callService = callService;
     }
 
     @Override
@@ -87,26 +92,26 @@ public class NewCallWindow extends BaseWindow {
         new Label(cpst_form, SWT.NONE).setText(MainKeys.LABEL_OUTPUT_DIRECTORY_PATH);
         newPath = new Text(cpst_form, SWT.BORDER);
         newPath.setLayoutData(gd_rightColumn);
-        DirectoryBrowserWidget browser = new DirectoryBrowserWidget(cpst_form, newPath, BasicUIKeys.LABEL_BROWSE);
+        new DirectoryBrowserWidget(cpst_form, newPath, BasicUIKeys.LABEL_BROWSE);
 
         new Label(cpst_form, SWT.NONE).setText(MainKeys.LABEL_CALL_WITH);
         callWith = new Text(cpst_form, SWT.BORDER);
         callWith.setLayoutData(gd_rightColumn);
-        // callWith.addModifyListener(new ModifyListener() {// TODO:
-        // Functionality: implementar el buscador de contactos dinamico.
-        // public void modifyText(ModifyEvent e) {
-        // List<Contact> ct =
-        // ContactServiceImpl.getInstance().getBy(callWith.getText());
-        // if (ct.size() == 1) {
-        // newCall.setContact(ct.get(0));
-        // callWith.setText(newCall.getContact().getFullName());
-        // }
-        // }
-        // });
+//        callWith.addModifyListener(new ModifyListener() {
+//            // TODO : Functionality: implementar el buscador de contactos dinamico.
+//            public void modifyText(ModifyEvent e) {
+//                List<Contact> ct =
+//                        ContactServiceImpl.getInstance().getBy(callWith.getText());
+//                if (ct.size() == 1) {
+//                    newCall.setContact(ct.get(0));
+//                    callWith.setText(newCall.getContact().getFullName());
+//                }
+//            }
+//        });
         new Label(cpst_form, SWT.NONE);
 
         new Label(cpst_form, SWT.NONE).setText(MainKeys.LABEL_SUBJECT);
-        subject = new Text(cpst_form, SWT.NONE);
+        subject = new Text(cpst_form, SWT.BORDER);
 
         cpst_form.setTabList(new Control[]{newPath, callWith, subject});
 
@@ -164,7 +169,7 @@ public class NewCallWindow extends BaseWindow {
 
         newCall.setContact(new Contact(callWith.getText()));
 
-        callService.exportToFile(newCall);
+        CallServiceImpl.getInstance().exportToFile(newCall);
     }
 
     /**
@@ -180,7 +185,7 @@ public class NewCallWindow extends BaseWindow {
         gd_shortDescript.widthHint = 500;
         shortDescript.setLayoutData(gd_shortDescript);
 
-        longDescript = new Text(cpst_form, SWT.MULTI);
+        longDescript = new Text(cpst_form, SWT.MULTI | SWT.BORDER);
         GridData gd_longDescript = new GridData(SWT.FILL, SWT.CENTER, false, false, 2, 1);
         gd_longDescript.widthHint = 700;
         longDescript.setLayoutData(gd_longDescript);

@@ -8,7 +8,9 @@ package org.nbempire.java.callsmanager.domain;
 public class Task {
 
     private Integer taskNumber;
+
     private String shortDescript;
+
     private String longDescript;
 
     public Task(Integer taskNumber) {
@@ -20,7 +22,7 @@ public class Task {
         StringBuffer sb = new StringBuffer();
 
         sb.append("Task number: ").append(taskNumber).append("\n\t").append("Short descript: ").append(shortDescript).append("\n\t")
-                .append("Long descript: ").append(longDescript);
+          .append("Long descript: ").append(longDescript);
 
         return sb.toString();
     }

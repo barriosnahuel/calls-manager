@@ -1,11 +1,11 @@
 package org.nbempire.java.callsmanager.domain;
 
+import org.nbempire.java.boc6.model.persist.Persistable;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-
-import org.nbempire.java.boc6.model.persist.Persistable;
 
 /**
  * @author Barrios, Nahuel.
@@ -15,10 +15,15 @@ import org.nbempire.java.boc6.model.persist.Persistable;
 public class Call implements Persistable {
 
     private Contact contact;
+
     private String outputDirectory;
+
     private Date date;
+
     private String subject;
+
     private List<Task> tasks;
+
     private String pathToExport;
 
     public Call() {
@@ -33,11 +38,10 @@ public class Call implements Persistable {
         // .append("\n").append("Contact email:\t").append(contact.getEmail())
         // TODO: Functionality: cuando se haya implementado lo de los contactos, agregar que imprima tambien el email.
         sb.append("Date:\t\t").append(date).append("\n").append("Call with:\t").append(contact.getFullName())
-                .append("\n").append("Subject:\t").append(subject).append("\n").append("Tasks:");
+          .append("\n").append("Subject:\t").append(subject).append("\n").append("Tasks:");
 
         for (Task task : tasks) {
             sb.append("\n\t").append(task).append("\n\t--");
-
         }
 
         return sb.toString();
@@ -94,5 +98,4 @@ public class Call implements Persistable {
     public String getStringToPersist() {
         return this.toString();
     }
-
 }

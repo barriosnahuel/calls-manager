@@ -10,14 +10,21 @@ import java.util.List;
 public class Contact {
 
     private Integer contactId;
+
     private String name;
+
     private String secondName;
+
     private String surname;
+
     private String email;
+
     private String celphone;
+
     private String fullName;
 
     private List<String> otherTelephones;
+
     private List<String> otherEmails;
 
     /**

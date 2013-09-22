@@ -10,6 +10,7 @@ import org.nbempire.java.callsmanager.domain.Call;
  * @author Nahuel Barrios.
  */
 public interface CallDao {
+
     /**
      * @param aCall
      *         The Call to export.

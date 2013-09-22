@@ -1,10 +1,9 @@
 package org.nbempire.java.callsmanager.service.impl;
 
+import org.nbempire.java.callsmanager.domain.Contact;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import org.nbempire.java.callsmanager.domain.Contact;
-import org.nbempire.java.callsmanager.service.ContactService;
 
 /**
  * Created by: Nahuel Barrios. On: 03/04/10 at 12:28hs.
@@ -12,7 +11,19 @@ import org.nbempire.java.callsmanager.service.ContactService;
  * @author Barrios, Nahuel.
  * @version 1.0
  */
-public class ContactServiceImpl implements ContactService {
+public class ContactServiceImpl {
+
+    public static ContactServiceImpl instance;
+
+    /**
+     * @return The unique instance of a ContactServiceImpl
+     */
+    public static ContactServiceImpl getInstance() {
+        if (instance == null) {
+            instance = new ContactServiceImpl();
+        }
+        return instance;
+    }
 
     /**
      * TODO : JavaDoc : for ContactServiceImpl.get().
@@ -81,5 +92,4 @@ public class ContactServiceImpl implements ContactService {
 
         return ret;
     }
-
 }
