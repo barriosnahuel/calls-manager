@@ -28,6 +28,5 @@
     <orderEntry type="library" name="Maven: log4j:log4j:1.2.16" level="project" />
     <orderEntry type="library" name="Maven: org.nbempire.java:boc-swt:1.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.swt:org.eclipse.swt.gtk.linux.x86_64:4.3" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse:swt:4.2.1" level="project" />
   </component>
 </module>
