@@ -1,7 +1,11 @@
 CallsManager
 ===
 
-[![locked](http://badges.github.io/stability-badges/dist/locked.svg)](http://github.com/badges/stability-badges)
+## Project status
+
+[![GitHub version](https://badge.fury.io/gh/barriosnahuel%2Fcalls-manager.svg)](http://github.com/barriosnahuel/calls-manager/releases)
+[![Semver](http://img.shields.io/SemVer/2.0.0.png)](http://semver.org/spec/v2.0.0.html)
+[![stability](https://img.shields.io/badge/stability-locked-blue.svg)](https://nodejs.org/api/documentation.html#documentation_stability_index)
 
 It's a Java dektop application made using SWT framework to create the graphic user interface.
 The application was created to help users that usualy have calls at work to take notes and then export it to a text file.
