@@ -18,12 +18,12 @@
         <dependency>
             <groupId>org.nbempire.java</groupId>
             <artifactId>boc6</artifactId>
-            <version>0.1</version>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.nbempire.java</groupId>
             <artifactId>boc-swt</artifactId>
-            <version>0.1.2</version>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.eclipse</groupId>
